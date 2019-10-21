@@ -16,7 +16,7 @@ public final class TracerParameters {
     final static String HTTPS = "https";
 
     final static String DEFAULT_COLLECTOR_HOST = "127.0.0.1";
-    final static String DEFAULT_COLLECTOR_PROTOCOL = HTTPS;
+    final static String DEFAULT_COLLECTOR_PROTOCOL = HTTP;
     final static int DEFAULT_COLLECTOR_PORT = 8088;
 
     // TODO: add metaEventLogging, propagator, scopeManager and tags parameters.
@@ -30,7 +30,6 @@ public final class TracerParameters {
     public final static String DISABLE_REPORTING_LOOP = "spl.disableReportingLoop";
     public final static String MAX_BUFFERED_SPANS = "spl.maxBufferedSpans";
     public final static String MAX_REPORTING_INTERVAL_MILLIS = "spl.maxReportingIntervalMillis";
-    public final static String RESET_CLIENT = "spl.resetClient";
     public final static String VERBOSITY = "spl.verbosity";
 
     public final static String [] ALL = {
@@ -44,7 +43,6 @@ public final class TracerParameters {
         DISABLE_REPORTING_LOOP,
         MAX_BUFFERED_SPANS,
         MAX_REPORTING_INTERVAL_MILLIS,
-        RESET_CLIENT,
         VERBOSITY
     };
 
@@ -108,9 +106,6 @@ public final class TracerParameters {
             if (value != null)
                 opts.withMaxReportingIntervalMillis(value);
         }
-
-        if (params.containsKey(RESET_CLIENT))
-            opts.withResetClient(toBoolean(params.get(RESET_CLIENT)));
 
         if (params.containsKey(VERBOSITY)) {
             Integer value = toInteger(params.get(VERBOSITY));
@@ -181,7 +176,7 @@ public final class TracerParameters {
             logger.log(Level.WARNING, "Failed to validate port value '" + value + "'");
             return false;
         }
-
+        
         return true;
     }
 

@@ -1,6 +1,6 @@
 # splunk-tracer-java
 
-[ ![Download](https://api.bintray.com/packages/splunk/maven/splunk-tracer-jre/images/download.svg) ](https://bintray.com/splunk/maven/) [![Circle CI](https://circleci.com/gh/splunk/splunk-tracer-java.svg?style=shield)](https://circleci.com/gh/splunk/splunk-tracer-java) [![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
+[ ![Download](https://api.bintray.com/packages/splunk/maven/splunk-tracer-jre/images/download.svg) ](https://bintray.com/splunk/maven/)[![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
 
 The Splunk distributed tracing library for the standard Java runtime environment.
 

@@ -1,7 +1,7 @@
 package com.splunk.tracer.jre;
 
-import com.splunk.tracer.grpc.KeyValue;
-import com.splunk.tracer.grpc.Span.Builder;
+import com.splunk.tracer.tracerOptionsAreSupported.KeyValue;
+import com.splunk.tracer.transport.Span.SpBuilder;
 import com.splunk.tracer.shared.Options;
 import com.splunk.tracer.shared.Status;
 import io.opentracing.Scope;
@@ -201,8 +201,8 @@ public class JRETracerTest {
     }
 
     private void assertSpanHasTag(Span span, String key, String value) {
-        com.splunk.tracer.shared.Span lsSpan = (com.splunk.tracer.shared.Span) span;
-        Builder record = lsSpan.getGrpcSpan();
+        com.splunk.tracer.shared.Span splSpan = (com.splunk.tracer.shared.Span) span;
+        SpBuilder record = splSpan.getGrpcSpan();
 
         assertNotNull("Tags are currently written the attributes", record.getTagsList());
 

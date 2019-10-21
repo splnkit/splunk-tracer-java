@@ -63,14 +63,14 @@
                                 </excludes>
                             </artifactSet>
                             <relocations>
-                                <relocation>
+<!--                                 <relocation>
                                     <pattern>com.google</pattern>
                                     <shadedPattern>splunk.com.google</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>google.protobuf</pattern>
                                     <shadedPattern>splunk.google.protobuf</shadedPattern>
-                                </relocation>
+                                </relocation> -->
                                 <relocation>
                                     <pattern>io.netty</pattern>
                                     <shadedPattern>splunk.io.netty</shadedPattern>
