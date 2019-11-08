@@ -120,13 +120,6 @@ public class SplunkTracerFactoryTest
     }
 
     @Test
-    public void getTracer_withInvalidResetClient() {
-        System.setProperty(TracerParameters.RESET_CLIENT, "abc");
-        tracer = new SplunkTracerFactory().getTracer();
-        assertNotNull(tracer); // No errors.
-    }
-
-    @Test
     public void getTracer_ConfigurationFile() throws Exception {
         System.clearProperty(TracerParameters.ACCESS_TOKEN);
 

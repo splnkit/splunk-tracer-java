@@ -7,7 +7,7 @@
     <groupId>com.splunk.tracer</groupId>
     <artifactId>splunk-tracer-java</artifactId>
     <packaging>pom</packaging>
-    <version>0.1.0</version>
+    <version>0.0.0</version>
 
     <name>Splunk Tracer Java (parent)</name>
     <description>Splunk Tracer Java (parent)</description>
@@ -42,7 +42,7 @@
     <distributionManagement>
         <repository>
             <id>splunk-bintray</id>
-            <url>https://api.bintray.com/maven/splunk/maven/splunk-tracer-jre/;publish=1</url>
+            <url>https://api.bintray.com/maven/splunk/splunktracing/splunk-tracer-jre/;publish=1</url>
         </repository>
     </distributionManagement>
 
@@ -50,7 +50,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <org.slf4j.version>1.7.25</org.slf4j.version>
-        <splunk.parent.version>0.1.0</splunk.parent.version>
+        <splunk.parent.version>0.0.3</splunk.parent.version>
         <io.opentracing.version>0.32.0</io.opentracing.version>
         <io.netty.version>2.0.8.Final</io.netty.version>
         <tracerresolver.version>0.1.5</tracerresolver.version>

@@ -11,7 +11,7 @@
     <parent>
         <groupId>com.splunk.tracer</groupId>
         <artifactId>splunk-tracer-java</artifactId>
-        <version>0.16.3</version>
+        <version>0.0.0</version>
     </parent>
 
     <build>
@@ -31,11 +31,11 @@
         <dependency>
             <groupId>com.splunk.tracer</groupId>
             <artifactId>splunk-tracer-jre</artifactId>
-            <version>0.16.3</version>
+            <version>0.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.splunk.tracer</groupId>
-            <artifactId>tracer-grpc</artifactId>
+            <artifactId>tracer-okhttp</artifactId>
             <version>${splunk.parent.version}</version>
         </dependency>
         <dependency>

@@ -25,7 +25,8 @@ public class Simple {
         System.out.println("Starting Simple example...");
 
         Options options = new Options.OptionsBuilder()
-                .withAccessToken("{your_access_token}")
+                .withAccessToken("08243c00-a31b-499d-9fae-776b41990997")
+                .withCollectorProtocol("http")
                 .withComponentName("JRE Simple")
                 .withVerbosity(4)
                 .build();

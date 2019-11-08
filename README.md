@@ -142,14 +142,13 @@ options = new com.splunk.tracer.shared.Options.OptionsBuilder()
 
 ### Advanced Option: Transport and Serialization Protocols
 
-By following the above configuration, the tracer will send information to Splunk using HTTP and Protocol Buffers which is the recommended configuration. If there are no specific transport protocol needs you have, there is no need to change this default.
+By following the above configuration, the tracer will send information to Splunk using HTTP  which is the recommended configuration. If there are no specific transport protocol needs you have, there is no need to change this default.
 
-There are two options for transport protocols:
+There is just one option for transport protocol:
 
-- [Protocol Buffers](https://developers.google.com/protocol-buffers/) over HTTP using [OkHttp](http://square.github.io/okhttp/) - The recommended and default solution.
-- [Protocol Buffers](https://developers.google.com/protocol-buffers/) over [GRPC](https://grpc.io/) - This is a more advanced solution that might be desirable if you already have gRPC networking configured.
+- GZIPped JSON over HTTP using [OkHttp](http://square.github.io/okhttp/) - The default solution.
 
-You can configure the tracer to support gRPC by replacing `com.splunk.tracer:tracer-okhttp` with `com.splunk.tracer:tracer-grpc` when including the tracer dependency and including a grpc dependency. i.e.
+
 
 #### Maven 
 
@@ -161,13 +160,8 @@ You can configure the tracer to support gRPC by replacing `com.splunk.tracer:tra
 </dependency>
 <dependency>
    <groupId>com.splunk.tracer</groupId>
-   <artifactId>tracer-grpc</artifactId>
+   <artifactId>tracer-okhttp</artifactId>
    <version> VERSION </version>
-</dependency>
-<dependency>
-    <groupId>io.grpc</groupId>
-    <artifactId>grpc-netty</artifactId>
-    <version>1.14.0</version>
 </dependency>
 <dependency>
     <groupId>io.netty</groupId>
@@ -180,12 +174,11 @@ You can configure the tracer to support gRPC by replacing `com.splunk.tracer:tra
 
 ```
 repositories {
-    mavenCentral() // OR jcenter()
+    jcenter()
 }
 dependencies {
     compile 'com.splunk.tracer:splunk-tracer-jre:VERSION'
-    compile 'com.splunk.tracer:tracer-grpc:VERSION'
-    compile 'io.grpc:grpc-netty:1.14.0'
+    compile 'com.splunk.tracer:tracer-okhttp:VERSION'
     compile 'io.netty:netty-tcnative-boringssl-static:2.0.12.Final'
 }
 ```

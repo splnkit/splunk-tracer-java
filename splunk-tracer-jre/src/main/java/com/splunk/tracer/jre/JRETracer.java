@@ -6,6 +6,9 @@ import com.splunk.tracer.shared.SimpleFuture;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import static com.splunk.tracer.jre.Version.SPLUNK_TRACER_VERSION;
 
 public class JRETracer extends AbstractTracer {
@@ -67,5 +70,11 @@ public class JRETracer extends AbstractTracer {
         addTracerTag(SPLUNK_TRACER_PLATFORM_KEY, "jre");
         addTracerTag(SPLUNK_TRACER_PLATFORM_VERSION_KEY, System.getProperty("java.version"));
         addTracerTag(SPLUNK_TRACER_VERSION_KEY, SPLUNK_TRACER_VERSION);
+        try {
+            addTracerTag("device", InetAddress.getLocalHost().getHostName());
+        } catch (UnknownHostException e) {
+ 
+            e.printStackTrace();
+        }
     }
 }

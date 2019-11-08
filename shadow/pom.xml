@@ -10,7 +10,7 @@
     <parent>
         <artifactId>splunk-tracer-java</artifactId>
         <groupId>com.splunk.tracer</groupId>
-        <version>0.16.3</version>
+        <version>0.0.0</version>
     </parent>
 
     <distributionManagement>
@@ -91,7 +91,7 @@
         <dependency>
             <groupId>com.splunk.tracer</groupId>
             <artifactId>splunk-tracer-jre</artifactId>
-            <version>0.16.3</version>
+            <version>0.0.0</version>
         </dependency>
     </dependencies>
 

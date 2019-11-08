@@ -1,6 +1,6 @@
 package com.splunk.tracer.jre;
 
-import com.splunk.tracer.tracerOptionsAreSupported.KeyValue;
+import com.splunk.tracer.transport.KeyValue;
 import com.splunk.tracer.transport.Span.SpBuilder;
 import com.splunk.tracer.shared.Options;
 import com.splunk.tracer.shared.Status;
@@ -32,12 +32,12 @@ public class JRETracerTest {
         Status status = tracer.status();
 
         // Check standard tags
-        assertTrue(status.hasTag("splunk.component_name"));
-        assertTrue(status.hasTag("splunk.guid"));
-        assertEquals("jre", status.getTag("splunk.tracer_platform"));
-        assertTrue(status.hasTag("splunk.tracer_platform_version"));
-        assertTrue(status.hasTag("splunk.tracer_version"));
-        assertFalse(status.hasTag("splunk.this_doesnt_exist"));
+        assertTrue(status.hasTag("component_name"));
+        assertTrue(status.hasTag("guid"));
+        assertEquals("jre", status.getTag("tracer_platform"));
+        assertTrue(status.hasTag("tracer_platform_version"));
+        assertTrue(status.hasTag("tracer_version"));
+        assertFalse(status.hasTag("this_doesnt_exist"));
     }
 
     @Test
@@ -49,7 +49,7 @@ public class JRETracerTest {
         JRETracer tracer = new JRETracer(options);
 
         Status status = tracer.status();
-        assertEquals("my_component", status.getTag("splunk.component_name"));
+        assertEquals("my_component", status.getTag("component_name"));
     }
 
     @Test
