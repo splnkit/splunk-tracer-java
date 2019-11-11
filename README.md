@@ -38,8 +38,8 @@ additional installation and setup information for using the library with various
 </dependency>
 ```
 
-* Be sure to replace `VERSION` with the current version of the library. For `TRACER-GRPC-VERSION` you can refer to  [splunk-tracer-common](https://github.com/splunk/splunk-tracer-java-common) which contains `tracer-grpc` (and `tracer-okhttp`).
-* Splunk libraries use provided scope for grpc-netty, netty-tcnative-boringssl-static and slf4j. In other words, Splunk tracer libraries will rely on whichever gRPC/Netty/sl4j version is currently available (i.e. pulled in at runtime) to avoid conflicting with existing versions within your project
+* Be sure to replace `VERSION` with the current version of the library. For `TRACER-GRPC-VERSION` you can refer to  [splunk-tracer-common](https://github.com/splunk/splunk-tracer-java-common) which contains `tracer-okhttp`.
+* Splunk libraries use provided scope for netty-tcnative-boringssl-static and slf4j. In other words, Splunk tracer libraries will rely on whichever Netty/sl4j version is currently available (i.e. pulled in at runtime) to avoid conflicting with existing versions within your project
 
 ### Gradle
 
